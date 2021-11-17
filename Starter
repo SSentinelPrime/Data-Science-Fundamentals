@@ -1,0 +1,28 @@
+#for reaching pokemon data set: https://github.com/dataiteam/7-ADIMLIK-YAPAY-ZEKA-YOLCULUGU/blob/951c0290d2b372b705b2599077cfda118b150c3a/Data%20Science%20ve%20Python%20S%C4%B1f%C4%B1rdan%20Uzmanl%C4%B1%C4%9Fa%20Veri%20Bilimi%20(2)/pokemon-challenge.zip
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib.pyplot as plt # for getting statistical graphs
+import seaborn as sns  # visualization tool
+
+from subprocess import check_output
+import os as os
+
+os.getcwd() #get current working directory
+
+os.chdir('C:/Users/Projects/Downloads/my_Science/pokemon-challenge') #change directory
+os.getcwd()
+os.listdir() #list directory contains
+
+data = pd.read_csv('pokemon.csv') #read csv file
+data.head() #show first 5 data rows
+data.head(10) #show first 10 data rows
+data.info() #it shows us summary of data
+data.corr() #it shows us correlation table for data set
+
+#data visualization with seaborn library
+f, ax = plt.subplots(figsize=(18, 18))
+sns.heatmap(data.corr(), annot=True, linewidths=.5, fmt='.1f', ax=ax)
+plt.show()
+#data visualization with seaborn library
+
+data.columns #see your columns in data set
